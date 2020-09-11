@@ -11,16 +11,16 @@ namespace ContosoCrafts.Website.Services
 {
     public class JsonFileProductService
     {
-        public JsonFileProductService(IWebHostEnvironment WebHostEnvironment)
+        public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
         }
 
-        public IWebHostEnvironment webHostEnvironment { get; }
+        public IWebHostEnvironment WebHostEnvironment { get; }
 
         private string JsonFileName
         {
-            get { return Path.Combine(webHostEnvironment.WebRootPath, "data", "product.json"); }
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
         }
 
         public IEnumerable<Product> GetProducts()
